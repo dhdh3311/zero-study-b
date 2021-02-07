@@ -2,7 +2,7 @@
   "name": "zero-study-b",
   "version": "1.0.0",
   "description": "zero study ",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/dhdh3311/zero-study-b/issues"
   },
-  "homepage": "https://github.com/dhdh3311/zero-study-b#readme"
+  "homepage": "https://github.com/dhdh3311/zero-study-b#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
