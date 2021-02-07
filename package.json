@@ -1,0 +1,23 @@
+{
+  "name": "zero-study-b",
+  "version": "1.0.0",
+  "description": "zero study ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhdh3311/zero-study-b.git"
+  },
+  "keywords": [
+    "node.js",
+    "study"
+  ],
+  "author": "doomdoom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhdh3311/zero-study-b/issues"
+  },
+  "homepage": "https://github.com/dhdh3311/zero-study-b#readme"
+}
