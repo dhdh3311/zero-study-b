@@ -14,7 +14,7 @@ const user = {
 } 
 
 
-app.use(express.urlencoded({ extended: false })); 
+app.use(express.urlencoded({ extended: false })); // 정확히 어떤기능인지 정확히 이해 못했음. 공부 중 
 app.use(express.json()); // Q. body-parser와 동일한 기능? 
 
 app.listen(HOST, IP, function () {
@@ -30,16 +30,20 @@ app.get("/users", function(req, res){
     return res.send("There is no user data.")
 });
 
-// app.get("/user/:id", function(req, res){
-//     const userById = userList.get(req.params.id);
+// TODO: refactoring, return 수 줄이기
+app.get("/user/:id", function(req, res){
+    console.log("req id: "+ req.params.id);
 
-//     if (userById !== null) {
-//         res.send(user)
-//     }
+    const userById = userList.find((item)=>{
+        return item.id === req.params.id;
+    })
+
+    if (userById !== null) {
+        return res.send(userById);
+    }
   
-//     res.send("There is no user of requested id.")
-// });
-
+    return res.send("There is no user of requested id.");
+});
 
 app.post("/user", function(req, res){
     console.log(`request address : ${req.path}`);
