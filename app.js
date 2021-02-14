@@ -3,6 +3,9 @@
 const express = require('express');
 const app = express();
 
+const IP = "127.0.0.1";
+const HOST = 3000;
+
 const userList = []; 
 const user = {
     id: userList.length,
@@ -10,17 +13,18 @@ const user = {
     twtId: "",
 } 
 
-app.use(express.json());
+app.use(express.json()); // Q. body-parser와 동일한 기능? 
 
-app.listen(3000, "127.0.0.1", function () {
+app.listen(HOST, IP, function () {
     console.log("server listen at localhost:3000...");
-  });
+});
 
 app.get("/users", function(req, res){
-    console.log("user list: ");
-    console.log(userList);
-
-    res.send(userList);
+    if (userList.length > 0) {
+        res.send(userList)
+    }
+  
+    res.send("There is no user data.")
 });
 
 app.post("/user", function(req, res){
