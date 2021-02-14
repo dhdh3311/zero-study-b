@@ -5,9 +5,9 @@ const app = express();
 
 const userList = []; 
 const user = {
-    id: 0,
+    id: userList.length,
     name: "",
-    twitterId: "",
+    twtId: "",
 } 
 
 app.use(express.json());
@@ -17,16 +17,18 @@ app.listen(3000, "127.0.0.1", function () {
   });
 
 app.get("/users", function(req, res){
-    console.log(`request addr : ${req.path}`);
-    
+    console.log("user list: ");
+    console.log(userList);
+
     res.send(userList);
 });
 
 app.post("/user", function(req, res){
-    console.log(`request addr : ${req.path}`);
+    console.log(`request address : ${req.path}`);
 
+    user.id = userList.length;
     user.name = req.body.name;
-    user.twitterId = req.body.twitterId;
+    user.twtId = req.body.twtId;
     userList.push(user);
 
     console.log(userList);
